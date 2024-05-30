@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post Blog</title>
+    <link rel="icon" type="image/x-icon" href="/images/favicon/favicon.ico">
+    <link rel="stylesheet" href="/styles/blog.css">
+</head>
+<body>
+    <%- include("partials/header.ejs") %>
+    <!--Content Area-->
+    <div id="content-div" class="page">
+        <% if(!locals.message){ %>
+        <form action="/blog" method="post" id="post-form">
+            <input type="submit" value="Post" id="post-button">
+        </form>
+        <% if(locals.title){ %>
+            <textarea name="post-content" form="post-form" id="post-box"><%= content %></textarea>
+            <textarea name="post-title" form="post-form" id="title-box" readonly><%=title%></textarea>
+        <% }else{ %>
+            <textarea name="post-content" form="post-form" id="post-box" placeholder="What do you want to share today?......"></textarea>
+            <textarea name="post-title" form="post-form" id="title-box" placeholder="Title of you post"></textarea>
+        <% } %>
+        <% } else{ %>
+            <h3 id="sucess-message">Post is added Successfully!</h3>
+        <% } %>
+    </div>
+    <!--Content Area Ends-->
+  
+  <%- include("partials/footer.ejs") %>
+</body>
+</html>

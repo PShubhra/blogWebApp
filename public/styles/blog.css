@@ -1,0 +1,35 @@
+html,body{
+    margin: 0;
+    height: 100%;
+    width: 100%;
+}
+body{
+    background-color: #EEF7FF;
+
+    display: flex;
+    flex-direction: column;
+}
+#content-div {
+    flex: auto;
+    background-color: #EEF7FF;
+    width: 100%;
+    border-radius: 10px;
+  }
+#content-div{
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+}
+#post-box{
+    margin: 10px;
+    width: 98%;
+    min-height: auto;
+    height: 50dvh;
+    border-radius: 5px;
+}
+#title-box{
+    margin: 10px;
+    width: 98%;
+    border-radius: 5px;
+}

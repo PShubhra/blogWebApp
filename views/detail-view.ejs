@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dev Blogs</title>
+    <link rel="icon" type="image/x-icon" href="/images/favicon/favicon.ico">
+    <link rel="stylesheet" href="/styles/dv.css">
+</head>
+<body>
+    <%- include("partials/header.ejs") %>
+    <!--Content Area-->
+    <div id="content-div" class="page">
+        <% if(locals.title){ %>
+            <h4><%= title %></h4>
+            <div id="content-view">
+                <p>
+                    <%= content %>
+                </p>
+            </div>
+            <div id="button-div">
+                <a class="a_div" href="/blog?title_to_update=<%=locals.title%>"> Edit</a>
+                <a class="a_div" href="/?title_to_delete=<%=locals.title%>" style="background-color: #FA7070;"> Delete</a>
+            </div>
+        <% }else if(!locals.title){ %>
+            <h3>Deletion Successfull</h3>
+        <% } %>
+    </div>
+    
+    <!--Content Area Ends-->
+    <%- include("partials/footer.ejs") %>
+</body>
+</html>
